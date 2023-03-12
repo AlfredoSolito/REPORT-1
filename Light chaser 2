@@ -1,0 +1,42 @@
+// This program is too create a light chaser going one way 
+
+// Define the pin 
+int LED1 = 13;
+int LED2 = 12;
+int LED3 = 11;
+int LED4 = 10;
+void setup() {
+  // define the outputs
+  pinMode(OUTPUT, LED1);
+  pinMode(OUTPUT, LED2);
+  pinMode(OUTPUT, LED3);
+  pinMode(OUTPUT, LED4);
+
+}
+void loop() {
+  // Start with turning ON one light and the rest OFF
+  digitalWrite(LED1, HIGH);
+  digitalWrite(LED2, LOW);
+  // place a delay for transition and turn ON the second light 
+  delay(75);
+  digitalWrite(LED1, LOW);
+  digitalWrite(LED2, HIGH);
+  //  another delay to turn ON the third light 
+  delay(75);
+  digitalWrite(LED2, LOW);
+  digitalWrite(LED3, HIGH);
+  // another delay to turn ON the last light 
+  delay(75);
+  digitalWrite(LED3, LOW);
+  digitalWrite(LED4, HIGH);
+  // last delay before going back
+  delay(75);
+  digitalWrite(LED4, LOW);
+  digitalWrite(LED3, HIGH);
+  // make sure you dont blink same light twice
+  delay(75);
+  digitalWrite(LED3, LOW);
+  digitalWrite(LED2, HIGH);
+  // then last delay to restart the program without blinking twice
+  delay(75);
+}
