@@ -1,0 +1,18 @@
+// This program is to create a pulldown resistor
+
+int buttonPin = 13;
+
+void setup() {
+  // define your input
+  pinMode(buttonPin, INPUT);
+  // This is to begin the serial monitor 
+  Serial.begin(9600);
+}
+
+void loop() {
+  // find the state of the button
+  int buttonState = digitalRead(buttonPin);
+  // This is to print the value of the RealValue on the serial monitor
+  Serial.println(buttonState);
+
+}
