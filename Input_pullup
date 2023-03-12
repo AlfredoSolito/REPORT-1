@@ -1,0 +1,19 @@
+// This program is to create an input pullup
+
+int buttonPin = 13; 
+void setup() {
+  // Define the input pullup
+  pinMode(buttonPin, INPUT_PULLUP);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+  // Connect the button to the input
+  int buttonState = digitalRead(buttonPin);
+  // state of actual pushhbutton
+  int RealState = !buttonState;
+  // print the value on the serial monitor 
+  Serial.println(RealState);
+
+}
