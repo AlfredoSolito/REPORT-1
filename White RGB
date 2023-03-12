@@ -1,4 +1,4 @@
-// This program is to turn on the white light on the RGB using the pushbutton
+// This program is to alternate from RB to RG using a pushbutton 
 
 int RED = 13;
 int GREEN = 12;
@@ -6,27 +6,27 @@ int BLUE = 11;
 int buttonPin = 9;
 
 void setup() {
-  // define the outputs
+  // define your outputs and inputs
   pinMode(OUTPUT, 13);
   pinMode(OUTPUT, 12);
   pinMode(OUTPUT, 11);
-  // for the pushbutton
   pinMode(9, INPUT_PULLUP);
 }
 
 void loop() {
-  // find the output value of the push button
+  // find value of pushbutton
   int buttonState = digitalRead(buttonPin);
+  // invert value so its teh same as the actual pushbutton
   int RealValue = !buttonState;
-  // if statement, if pushbutton a 1 then white if pushbutton a 0 then everything off
-  if(buttonState == 1) {
-    digitalWrite(RED, HIGH);
-    digitalWrite(GREEN, HIGH);
+   // the red is always on
+  digitalWrite(RED, HIGH);
+  // use if command to say if the pushbutton a 1 or 0 do this 
+  if(RealValue ==1) {
     digitalWrite(BLUE, HIGH);
-  }
-  if(buttonState == 0) {
-    digitalWrite(RED, LOW);
     digitalWrite(GREEN, LOW);
+  }
+  if(RealValue ==0) {
+    digitalWrite(GREEN, HIGH);
     digitalWrite(BLUE, LOW);
   }
 }
