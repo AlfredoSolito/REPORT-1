@@ -1,0 +1,20 @@
+// This program is to blink a light
+
+// Define the pin
+int pin = 13;
+void setup() {
+  // Setup your pin with the output
+  pinMode(OUTPUT, pin);
+
+}
+
+void loop() {
+  // LED ON
+  digitalWrite(pin, HIGH);
+  //Create a 1 second delay
+  delay(100);
+  // LED OFF 
+  digitalWrite(pin, LOW);
+  // Lastly wait 1 more second to restart the code
+  delay(100);
+}
