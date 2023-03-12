@@ -15,9 +15,10 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // find the output value of the push button
   int buttonState = digitalRead(buttonPin);
   int RealValue = !buttonState;
+  // if statement, if pushbutton a 1 then white if pushbutton a 0 then everything off
   if(buttonState == 1) {
     digitalWrite(RED, HIGH);
     digitalWrite(GREEN, HIGH);
