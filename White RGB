@@ -1,0 +1,31 @@
+// This program is to turn on the white light on the RGB using the pushbutton
+
+int RED = 13;
+int GREEN = 12;
+int BLUE = 11;
+int buttonPin = 9;
+
+void setup() {
+  // define the outputs
+  pinMode(OUTPUT, 13);
+  pinMode(OUTPUT, 12);
+  pinMode(OUTPUT, 11);
+  // for the pushbutton
+  pinMode(9, INPUT_PULLUP);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int buttonState = digitalRead(buttonPin);
+  int RealValue = !buttonState;
+  if(buttonState == 1) {
+    digitalWrite(RED, HIGH);
+    digitalWrite(GREEN, HIGH);
+    digitalWrite(BLUE, HIGH);
+  }
+  if(buttonState == 0) {
+    digitalWrite(RED, LOW);
+    digitalWrite(GREEN, LOW);
+    digitalWrite(BLUE, LOW);
+  }
+}
